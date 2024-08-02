@@ -1,2 +1,3 @@
 # TallerAgostoLinux2024
-Taller linux ORT
+Clon de todo.war para el despliegue de la aplicación
+
