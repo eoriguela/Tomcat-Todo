@@ -5,7 +5,7 @@ A basic tutorial on running a web app on Tomcat using Podman (based on a docker 
 * Install [podman](https://podman.io/getting-started/installation).
 * Clone this repository  
 ```
-$ git clone https://github.com/emverdes/docker-tomcat-tutorial.git
+$ git clone https://github.com/eoriguela/Tomcat-Todo.git
 
 $ cd docker-tomcat-tutorial
 ```
@@ -26,15 +26,15 @@ Replace localhost with the hostname of the host running your containers.
 Remember to open up the ports in your firewall if needed.
 
 ```
-ProxyPass "/sample"  "http://localhost:8008/sample"
-ProxyPassReverse "/sample"  "http://localhost:8008/sample"
+ProxyPass "/todo"  "http://localhost:8008/todo"
+ProxyPassReverse "/todo"  "http://localhost:8008/todo"
 ```
 
 # Apache proxy loadbalancer for 2 containers
 ```
 <Proxy "balancer://mycluster">
-    BalancerMember "http://localhost:8008/sample"
-    BalancerMember "http://localhost:8009/sample"
+    BalancerMember "http://localhost:8008/todo"
+    BalancerMember "http://localhost:8009/todo"
 </Proxy>
 ProxyPass        "/" "balancer://mycluster/"
 ProxyPassReverse "/" "balancer://mycluster/"
