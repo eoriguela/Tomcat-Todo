@@ -7,7 +7,8 @@ A basic tutorial on running a web app on Tomcat using Podman (based on a docker 
 ```
 $ git clone https://github.com/eoriguela/Tomcat-Todo.git
 
-$ cd docker-tomcat-tutorial
+$ cd Tomcat-Todo
+
 ```
 * Verify Tomcat download URL from https://dlcdn.apache.org/tomcat/ to update the Containerfile
 ```
